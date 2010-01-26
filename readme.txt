@@ -13,8 +13,6 @@ Powerful mortgage rates widget for your blog.
 
 Feedback is greatly appreciated: http://www.mlcalc.com/feedback.htm
 
-[WordPress Mortgage Rates Plugin](http://www.mlcalc.com/free-widgets/mortgage-rates/)
-
 == Installation ==
 
 1. Upload plugin files to the `/wp-content/plugins/mlcalc_rates/` directory.
@@ -27,6 +25,10 @@ The plugin can be used in one of two ways: if you are using widgets, just add th
 2. The Trend Chart and Detailed Rates, as it appears when a visitor clicks the View Trend anchor.
 3. The Mortgage Rates widget configuration dialog, as it appears within WordPress Administration Interface.
 
+== Usage ==
+
+The plugin can be used in one of two ways: if you are using widgets, just add the plugin to the sidebar through the `Appearance -> Widgets` menu in WordPress. If you aren't using widgets, add the following code: `<?php display_mlcalc_rates(); ?>` to your template where you would like the calculator form to appear.
+
 == Frequently Asked Questions ==
 
 = Do I need any special code in my template =
@@ -34,3 +36,7 @@ No.
 
 = Which browsers are supported =
 Any good up-to-date browser should work fine. We've tested in Firefox, IE6, IE7, IE8 and Opera.
+
+== Homepage ==
+
+[WordPress Mortgage Rates Plugin](http://www.mlcalc.com/free-widgets/mortgage-rates/)
