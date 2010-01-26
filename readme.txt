@@ -1,5 +1,5 @@
 === Mortgage Rates ===
-Tags: widget, sidebar, plugin, mortgage, rates, mortgage rates, mortgage rate
+Tags: widget, sidebar, plugin, mortgage, rates, mortgage rates, mortgage rate, realty, real estate, homes
 Contributors: mlcalc
 Requires at least: 2.1.x
 Tested up to: 2.9
