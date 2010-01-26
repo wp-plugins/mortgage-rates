@@ -15,7 +15,7 @@ Feedback is greatly appreciated: http://www.mlcalc.com/feedback.htm
 
 == Installation ==
 
-1. Upload plugin files to the `/wp-content/plugins/mlcalc_rates/` directory.
+1. Upload plugin files to the `/wp-content/plugins/mortgage-rates/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
 The plugin can be used in one of two ways: if you are using widgets, just add the plugin to the sidebar through the `Appearance -> Widgets` menu in WordPress. If you aren't using widgets, add the following code: `<?php display_mlcalc_rates(); ?>` to your template where you would like the calculator form to appear.
