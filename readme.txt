@@ -1,8 +1,8 @@
 === Mortgage Rates widget ===
-Tags: widget, sidebar, plugin, mortgage, rates, mortgage rates
+Tags: widget, sidebar, plugin, mortgage, rates, mortgage rates, mortgage rate
 Contributors: mlcalc
 Requires at least: 2.1.x
-Tested up to: 2.7
+Tested up to: 2.9
 Stable tag: trunk
 
 Powerful mortgage rates widget for your blog.
