@@ -37,4 +37,4 @@ Any good up-to-date browser should work fine. We've tested in Firefox, IE6, IE7,
 
 == Homepage ==
 
-[Mortgage Rates for WordPress](http://www.mlcalc.com/free-widgets/mortgage-rates/wordpress.htm)
+[Mortgage Rates](http://www.mlcalc.com/mortgage-rates/)
