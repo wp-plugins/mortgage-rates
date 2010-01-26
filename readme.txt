@@ -9,7 +9,7 @@ Powerful mortgage rates widget for your blog.
 
 == Description ==
 
-(http://www.mlcalc.com/mortgage-rates/ "Mortgage Rates") is a great value-add for any loan officer or real estate agent looking to provide good-looking, functional, valuable content to readers. The execution of this infobox is superb from the smooth sidebar integration, modal window trend and AJAX-based graphs that are incredibly visually appealing. It's a great little application that delivers a lot of value in a user-friendly and well-executed way.
+[Mortgage Rates](http://www.mlcalc.com/mortgage-rates/ "Mortgage Rates Homepage") is a great value-add for any loan officer or real estate agent looking to provide good-looking, functional, valuable content to readers. The execution of this infobox is superb from the smooth sidebar integration, modal window trend and AJAX-based graphs that are incredibly visually appealing. It's a great little application that delivers a lot of value in a user-friendly and well-executed way.
 
 Feedback is greatly appreciated: http://www.mlcalc.com/feedback.htm
 
