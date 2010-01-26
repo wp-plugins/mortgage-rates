@@ -15,9 +15,8 @@ Feedback is greatly appreciated: http://www.mlcalc.com/feedback.htm
 
 == Installation ==
 
-1. Download the wp-mlcalc-rates-plugin.zip (http://www.mlcalc.com/files/wp-mlcalc-rates-plugin.zip) file.
-2. Unzip and upload the `mlcalc_rates` folder into your WordPress `wp-content/plugins` directory.
-3. Activate the plugin through the 'Plugins' menu in WordPress.
+1. Upload plugin files to the `/wp-content/plugins/` directory.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Screenshots ==
 1. The Mortgage Rates front-end, as it appears in your WordPress Sidebar.
@@ -34,8 +33,8 @@ The plugin can be used in one of two ways: if you are using widgets, just add th
 No.
 
 = Which browsers are supported =
-Any good up-to-date browser should work fine. We've tested in Firefox, IE6, IE7 and Opera.
+Any good up-to-date browser should work fine. We've tested in Firefox, IE6, IE7, IE8 and Opera.
 
 == Homepage ==
 
-[Mortgage Rates for WordPress](http://www.mlcalc.com/widgets/mortgage-rates/)
+[Mortgage Rates for WordPress](http://www.mlcalc.com/free-widgets/mortgage-rates/wordpress.htm)
