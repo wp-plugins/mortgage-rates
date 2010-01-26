@@ -13,7 +13,7 @@ Powerful mortgage rates widget for your blog.
 
 Feedback is greatly appreciated: http://www.mlcalc.com/feedback.htm
 
-[WordPress Mortgage Rates Plugin](http://www.mlcalc.com/free-widgets/mortgage-rates/wordpress.htm)
+[WordPress Mortgage Loan Rates Plugin](http://www.mlcalc.com/free-widgets/mortgage-rates/wordpress.htm)
 
 == Installation ==
 
