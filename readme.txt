@@ -1,4 +1,4 @@
-=== Mortgage Rates widget ===
+=== Mortgage Rates ===
 Tags: widget, sidebar, plugin, mortgage, rates, mortgage rates, mortgage rate
 Contributors: mlcalc
 Requires at least: 2.1.x
@@ -9,13 +9,13 @@ Powerful mortgage rates widget for your blog.
 
 == Description ==
 
-Mortgage Rates is a great value-add for any loan officer or real estate agent looking to provide good-looking, functional, valuable content to readers. The execution of this infobox is superb from the smooth sidebar integration, modal window trend and AJAX-based graphs that are incredibly visually appealing. It's a great little application that delivers a lot of value in a user-friendly and well-executed way.
+(http://www.mlcalc.com/mortgage-rates/ "Mortgage Rates") is a great value-add for any loan officer or real estate agent looking to provide good-looking, functional, valuable content to readers. The execution of this infobox is superb from the smooth sidebar integration, modal window trend and AJAX-based graphs that are incredibly visually appealing. It's a great little application that delivers a lot of value in a user-friendly and well-executed way.
 
 Feedback is greatly appreciated: http://www.mlcalc.com/feedback.htm
 
 == Installation ==
 
-1. Upload plugin files to the `/wp-content/plugins/` directory.
+1. Upload plugin files to the `/wp-content/plugins/mlcalc_rates/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Screenshots ==
@@ -25,7 +25,7 @@ Feedback is greatly appreciated: http://www.mlcalc.com/feedback.htm
 
 == Usage ==
 
-The plugin can be used in one of two ways: if you are using widgets, just add the plugin to the sidebar through the `Design -> Widgets` menu in WordPress. If you aren't using widgets, add the following code: <?php display_mlcalc_rates(); ?> to your template where you would like the calculator form to appear.
+The plugin can be used in one of two ways: if you are using widgets, just add the plugin to the sidebar through the `Appearance -> Widgets` menu in WordPress. If you aren't using widgets, add the following code: `<?php display_mlcalc_rates(); ?>` to your template where you would like the calculator form to appear.
 
 == Frequently Asked Questions ==
 
@@ -37,4 +37,4 @@ Any good up-to-date browser should work fine. We've tested in Firefox, IE6, IE7,
 
 == Homepage ==
 
-[Mortgage Rates](http://www.mlcalc.com/mortgage-rates/)
+[WordPress Mortgage Rates Plugin](http://www.mlcalc.com/free-widgets/mortgage-rates/)
