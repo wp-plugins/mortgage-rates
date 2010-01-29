@@ -24,9 +24,9 @@
 Plugin Name: Mortgage Rates
 Plugin URI: http://www.mlcalc.com/free-widgets/mortgage-rates/wordpress.htm
 Description: Mortgage rates widget for your blog.
-Author: Mortgage Loan Calculator
+Author: Free Mortgage Widgets
 Version: 1.0
-Author URI: http://www.mlcalc.com/
+Author URI: http://www.mlcalc.com/free-widgets/
 */
 
 /* Function: display_mlcalc_rates_widget
