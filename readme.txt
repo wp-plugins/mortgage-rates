@@ -3,7 +3,7 @@ Tags: widget, sidebar, plugin, mortgage, rates, mortgage rates, mortgage rate, r
 Contributors: mlcalc
 Requires at least: 2.1.x
 Tested up to: 2.9
-Stable tag: trunk 
+Stable tag: trunk
 
 Powerful mortgage rates widget for your blog.
 
