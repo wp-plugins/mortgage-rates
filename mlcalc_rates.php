@@ -2,7 +2,7 @@
 
 // Mortgage Rates widget
 //
-// Copyright (c) 2008 MLCALC.COM
+// Copyright (c) 2008-2010 MLCALC.COM
 // http://www.mlcalc.com/widgets/mortgage-rates/
 //
 // This is an add-on for WordPress
@@ -25,7 +25,7 @@ Plugin Name: Mortgage Rates
 Plugin URI: http://www.mlcalc.com/free-widgets/mortgage-rates/wordpress.htm
 Description: Mortgage rates widget for your blog.
 Author: Free Mortgage Tools
-Version: 1.0
+Version: 1.1
 Author URI: http://www.mlcalc.com/free-widgets/
 */
 
