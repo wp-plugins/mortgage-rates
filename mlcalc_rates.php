@@ -130,9 +130,9 @@ function mlcalc_rates_control() {
 		update_option('widget_mlcalc_rates', $options);
 	}
 
-	$title = attribute_escape($options['title']);
-	$state = attribute_escape($options['state']);
-	$form_size = attribute_escape($options['form_size']);
+	$title = esc_attr($options['title']);
+	$state = esc_attr($options['state']);
+	$form_size = esc_attr($options['form_size']);
 ?>
 		<p><label for="mlcalc_rates-title"><?php _e('Title:'); ?> <input class="widefat" id="mlcalc_rates-title" name="mlcalc_rates-title" type="text" value="<?php echo $title; ?>" /></label></p>
 		<p>
