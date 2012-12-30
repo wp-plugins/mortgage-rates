@@ -26,7 +26,7 @@ Plugin Name: Mortgage Rates
 Plugin URI: http://www.mlcalc.com/free-widgets/mortgage-rates/wordpress.htm
 Description: Mortgage rates widget for your blog.
 Author: Free Mortgage Tools
-Version: 1.2
+Version: 1.3
 Author URI: http://www.mlcalc.com/free-widgets/
 */
 
@@ -61,49 +61,62 @@ function display_mlcalc_rates_widget( $args ) {
 	** args: $options - to skip duplicate get_options calls
 	** returns: nothing
 */
-function display_mlcalc_rates($options = array()) {
+function display_mlcalc_rates($options = array(), $content = null, $code = "") {
 	global $mlcalc_ratesURL, $mlcalc_rates_states;
-	if(empty($options)) $options = get_option( 'widget_mlcalc_rates' );
+	if(!empty($code) || (!empty($options) && ($options[0] == 'mlrates'))){
+		$shortcode = true;
 
-	$state     = empty( $options['state'] ) ? 'XX' : $options['state'];
-	$form_size = empty( $options['form_size'] ) ? 'small' : $options['form_size'];
+		// $atts    ::= array of attributes
+		// examples: [mlrates]
+		//           [mlrates state='NY' size='narrow']
+		extract( shortcode_atts( array(
+			// default parameters
+			'state' => 'XX',
+			'size' => 'wide', // wide|narrow
+		), $options ) );
+		$form_size = strtolower($size);
+		$state     = strtoupper($state);
+	} else {
+		$options = get_option( 'widget_mlcalc_rates' );
+	}
 	
 	$SECTION = $mlcalc_rates_states[$state];
 
-	echo "<!-- MLCALC RATES BEGIN -->"."\r\n";
-	if($form_size == 'small'){
-		?>
-		<script type="text/javascript">if(typeof jQuery == "undefined"){document.write(unescape("%3Cscript src='" + (document.location.protocol == 'https:' ? 'https:' : 'http:') + "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));mlcalc_jquery_noconflict=1;};</script>
-		 <!-- Dec 2012 --> <div id="MLCalcRatesForm<?php echo $SECTION["alias"]; ?>" class="MLCalcRatesForm"> <!--[if lte IE 6]> <script type="text/javascript" src="http://cdn.mlcalc.com/themes/mlcalc/jquery.pngFix.js"></script> <![endif]--> <table cellpadding="0" cellspacing="0" width="150"> <tr> <td colspan="3" class="zeroHeight"><img src="http://cdn.mlcalc.com/themes/mlcalc/images/top-small.png" width="150" height="13" alt="" /></td> </tr> <tr> <td style="background: url(http://cdn.mlcalc.com/themes/mlcalc/images/left-bg.png) repeat-y" width="7"></td> <td class="formPlaceHolder" width="136"> <form action="<?php echo $SECTION["url"]; ?>" method="post" id="MLCalcRatesFormTrend<?php echo $SECTION["alias"]; ?>" target="MLCalcRatesFrame"> <input type="hidden" name="state" value="<?php echo $SECTION["alias"]; ?>" /> <input type="hidden" name="wg" value="widget" /> </form> <table cellpadding="0" cellspacing="0" width="136"> <tr><td width="7"></td><td colspan="4"><?php if ($SECTION['alias'] == "XX") { echo '<div class="name">US Average<a href="' . $SECTION['url'] . '" class="nameB">Mortgage Rates</a></div>'; } else { echo '<a href="'. $SECTION['url'] . '" class="name">' . $SECTION['name'] . ' <b>Mortgage Rates</b></a>'; } ?></td></tr> <tr><td width="7" height="5"></td></tr> <tr class="odd" id="type30yf"> <td width="7"></td> <td width="83">30 Year Fixed</td> <td width="36"><span class="loading">loading...</span></td> <td width="5"></td> <td width="5"></td> </tr> <tr class="even" id="type15yf"> <td width="7"></td> <td width="83">15 Year Fixed</td> <td width="36"><span class="loading">loading...</span></td> <td width="5"></td> <td width="5"></td> </tr> <tr class="odd" id="type51arm"> <td width="7"></td> <td width="83">5/1 ARM</td> <td width="36"><span class="loading">loading...</span></td> <td width="5"></td> <td width="5"></td> </tr> <tr><td width="7" height="4" colspan="5"></td></tr> <tr><td colspan="5"> <center><table cellpadding="0" cellspacing="0"><tr> <td valign="bottom"><img src="http://cdn.mlcalc.com/themes/mlcalc/images/icon-trend-small.gif" width="15" height="12" alt="" /></td> <td width="5"></td> <td id="trendLink">View Trend</td> </tr></table></center> </td></tr> </table> </td> <td style="background: url(http://cdn.mlcalc.com/themes/mlcalc/images/right-bg.png) repeat-y" width="7"></td> </tr> <tr> <td colspan="3" class="zeroHeight"><img src="http://cdn.mlcalc.com/themes/mlcalc/images/bottom-small.png" width="150" height="13" alt="" /></td> </tr> </table> </div> 
-		<script type="text/javascript" src="<?php echo str_replace('http://www.', 'http://cdn.', $SECTION['url']); ?>wordpress.js"></script>
-		<?php
-
+	// LOAD SCRIPTS
+	wp_enqueue_script( 'mlrates-widget-script', str_replace('http://www.', 'http://cdn.', $SECTION['url'])."wordpress.js", array('jquery') );
+	
+	// LOAD STYLES
+	wp_register_style( 'mlrates-form-small-style', plugins_url('rates-widget-form-small.css', __FILE__) );
+	wp_register_style( 'mlrates-form-style', plugins_url('rates-widget-form.css', __FILE__) );
+	if($form_size == 'narrow'){
+		wp_enqueue_style( 'mlrates-form-small-style' );
 	} else {
-		?>
-		<script type="text/javascript">if(typeof jQuery == "undefined"){document.write(unescape("%3Cscript src='" + (document.location.protocol == 'https:' ? 'https:' : 'http:') + "//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));mlcalc_jquery_noconflict=1;};</script>
-		 <!-- Dec 2012 --> <div id="MLCalcRatesForm<?php echo $SECTION["alias"]; ?>" class="MLCalcRatesForm"> <!--[if lte IE 6]> <script type="text/javascript" src="http://cdn.mlcalc.com/themes/mlcalc/jquery.pngFix.js"></script> <![endif]--> <table cellpadding="0" cellspacing="0" width="300"> <tr> <td colspan="3" class="zeroHeight"><img src="http://cdn.mlcalc.com/themes/mlcalc/images/top.png" width="300" height="13" alt="" /></td> </tr> <tr> <td style="background: url(http://cdn.mlcalc.com/themes/mlcalc/images/left-bg.png) repeat-y" width="7"></td> <td class="formPlaceHolder" width="286"> <form action="<?php echo $SECTION["url"]; ?>" method="post" id="MLCalcRatesFormTrend<?php echo $SECTION["alias"]; ?>" target="MLCalcRatesFrame"> <input type="hidden" name="state" value="<?php echo $SECTION["alias"]; ?>" /> <input type="hidden" name="wg" value="widget" /> </form> <table cellpadding="0" cellspacing="0" width="286"> <tr><td width="14"></td><td colspan="4" width="272"><?php if ($SECTION['alias'] == "XX") { echo '<div class="name">US Average<a href="' . $SECTION['url'] . '" class="nameB">Mortgage Rates</a></div>'; } else { echo '<a href="'. $SECTION['url'] . '" class="name">' . $SECTION['name'] . ' <b>Mortgage Rates</b></a>'; } ?></td></tr> <tr><td width="14" height="5"></td></tr> <tr class="odd" id="type30yf"> <td width="14"></td> <td width="157">30 Year Fixed</td> <td width="52"><span class="loading">loading...</span></td> <td width="35" class="change"></td> <td width="14"></td> </tr> <tr class="even" id="type15yf"> <td width="14"></td> <td width="157">15 Year Fixed</td> <td width="52"><span class="loading">loading...</span></td> <td width="35" class="change"></td> <td width="14"></td> </tr> <tr class="odd" id="type51arm"> <td width="14"></td> <td width="157">5/1 ARM</td> <td width="52"><span class="loading">loading...</span></td> <td width="35" class="change"></td> <td width="14"></td> </tr> <tr><td width="14" height="7" colspan="5"></td></tr> <tr><td colspan="6"> <center><table cellpadding="0" cellspacing="0"><tr> <td valign="bottom"><img src="http://cdn.mlcalc.com/themes/mlcalc/images/icon-trend.gif" width="18" height="15" alt="" /></td> <td width="6"></td> <td id="trendLink">View Trend</td> </tr></table></center> </td></tr> <tr><td width="14" height="3" colspan="5"></td></tr> </table> </td> <td style="background: url(http://cdn.mlcalc.com/themes/mlcalc/images/right-bg.png) repeat-y" width="7"></td> </tr> <tr> <td colspan="3" class="zeroHeight"><img src="http://cdn.mlcalc.com/themes/mlcalc/images/bottom.png" width="300" height="13" alt="" /></td> </tr> </table> </div> 
-		<script type="text/javascript" src="<?php echo str_replace('http://www.', 'http://cdn.', $SECTION['url']); ?>wordpress.js"></script>
-		<?php
+		wp_enqueue_style( 'mlrates-form-style' );
 	}
 
-	echo "<!-- MLCALC RATES END -->\r\n";
-}
+	if($shortcode) ob_start();
 
-/* Function: mlcalc_rates_head_data
-**
-** This function inserts link to CSS file into header
-**
-** args: nothing
-** returns: nothing
-*/
+	echo "<!-- MLCALC RATES BEGIN -->\r\n";
+	echo "<script type=\"text/javascript\">\r\n";
+	echo "var _mlcalc_preload_img = new Image(312,44);\r\n";
+	echo "_mlcalc_preload_img.src='".plugins_url('images/ajax-loader.gif', __FILE__)."';\r\n";
+	echo "</script>\r\n";
 
-function mlcalc_rates_head_data(){
-	$options = get_option( 'widget_mlcalc_rates' );
-	$form_size = empty( $options['form_size'] ) ? 'small' : $options['form_size'];
-	if($form_size == 'small'){
-		echo '<link type="text/css" rel="stylesheet" href="http://cdn.mlcalc.com/themes/mlcalc/rates-widget-form-small.css" />';
+	if($form_size == 'narrow'){
+		include('form-narrow.inc.php');
 	} else {
-		echo '<link type="text/css" rel="stylesheet" href="http://cdn.mlcalc.com/themes/mlcalc/rates-widget-form.css" />';
+		include('form-wide.inc.php');
+	}
+	echo "<!-- MLCALC RATES END -->\r\n";
+
+	if($shortcode){
+		$result = ob_get_contents();
+		ob_end_clean();
+		if(is_null($content)){
+			return $result;
+		} else {
+			return $content . $result;
+		}
 	}
 }
 
@@ -176,7 +189,7 @@ function mlcalc_rates_register() {
 
 // This is important
 add_action( 'widgets_init', 'mlcalc_rates_register' );
-add_action( 'wp_head', 'mlcalc_rates_head_data' );
+add_shortcode( 'mlrates', 'display_mlcalc_rates' );
 
 
 ?>
