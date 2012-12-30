@@ -133,7 +133,7 @@ function mlcalc_rates_control() {
 	global $mlcalc_ratesURL, $mlcalc_rates_states;
 	$options = $newoptions = get_option('widget_mlcalc_rates');
 
-	if ( $_POST['mlcalc_rates-submit'] ) {
+	if ( !empty($_POST['mlcalc_rates-submit'] )) {
 		$newoptions['title']     = strip_tags(stripslashes($_POST['mlcalc_rates-title']));
 		$newoptions['state']     = strip_tags(stripslashes($_POST['mlcalc_rates-state']));
 		$newoptions['form_size'] = strip_tags(stripslashes($_POST['mlcalc_rates-form_size']));
