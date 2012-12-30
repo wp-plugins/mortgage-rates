@@ -33,7 +33,7 @@ The plugin can be used in one of two ways: if you are using widgets, just add th
 = Shortcode examples =
 `	
 [mlrates]
-[mlrates state="NY" size="narrow"]
+[mlrates state="NY" size="narrow"]`
 
 == Screenshots ==
 1. The Mortgage Rates front-end, as it appears in your WordPress Sidebar.
