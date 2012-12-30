@@ -27,7 +27,7 @@ The plugin can be used in one of two ways: if you are using widgets, just add th
 * Add the shortcode `[mlrates]` to your page or post and configure default parameters.
 
 = Shortcode parameters =
-* size = wide|narrow
+* size = wide | narrow
 * state = any US state here
 
 = Shortcode examples =
