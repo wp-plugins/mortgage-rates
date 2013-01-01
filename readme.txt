@@ -11,7 +11,7 @@ Powerful mortgage rates widget for your blog.
 
 [Mortgage Rates](http://www.mlcalc.com/mortgage-rates/ "Mortgage Rates Homepage") is a great value-add for any loan officer or real estate agent looking to provide good-looking, functional, valuable content to readers. The execution of this infobox is superb from the smooth sidebar integration, modal window trend and AJAX-based graphs that are incredibly visually appealing. It's a great little application that delivers a lot of value in a user-friendly and well-executed way.
 
-The plugin uses external JS to update mortgage rates from [http://www.mlcalc.com/mortgage-rates/](http://www.mlcalc.com/mortgage-rates/ "Mortgage Rates Source").
+The plugin uses external JavaScript to update mortgage rates from [http://www.mlcalc.com/mortgage-rates/](http://www.mlcalc.com/mortgage-rates/ "Mortgage Rates Source"). The JavaScript is downloaded via Akamai CDN (high quality Content Delivery Network).
 
 [WordPress Mortgage Loan Rates Plugin](http://www.mlcalc.com/free-widgets/mortgage-rates/wordpress.htm)
 
