@@ -25,7 +25,7 @@ Plugin Name: Mortgage Rates
 Plugin URI: http://www.mlcalc.com/free-widgets/mortgage-rates/wordpress.htm
 Description: Mortgage rates widget for your blog.
 Author: Free Mortgage Tools
-Version: 1.3.1
+Version: 1.3.2
 Author URI: http://www.mlcalc.com/free-widgets/
 */
 
@@ -166,8 +166,8 @@ function mlcalc_rates_control() {
 		<p>
 			<label for="mlcalc_rates-form_size"><?php _e( 'Form size:' ); ?>
 				<select name="mlcalc_rates-form_size" id="mlcalc_rates-form_size" class="widefat">
-					<option value="small"<?php selected( $options['form_size'], 'narrow' ); ?>><?php _e('Narrow (width = 150px)'); ?></option>
-					<option value="big"<?php selected( $options['form_size'], 'wide' ); ?>><?php _e('Wide (width = 300px)'); ?></option>
+					<option value="narrow"<?php selected( $options['form_size'], 'narrow' ); ?>><?php _e('Narrow (width = 150px)'); ?></option>
+					<option value="wide"<?php selected( $options['form_size'], 'wide' ); ?>><?php _e('Wide (width = 300px)'); ?></option>
 				</select>
 			</label>
 		</p>

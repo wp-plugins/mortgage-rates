@@ -3,7 +3,7 @@ Tags: widget, sidebar, plugin, mortgage, rates, mortgage rates, mortgage rate, r
 Contributors: mlcalc
 Requires at least: 2.1.x
 Tested up to: 3.5
-Stable tag: 1.3.1
+Stable tag: 1.3.2
 
 Powerful mortgage rates widget for your blog.
 
@@ -43,6 +43,9 @@ The plugin can be used in one of two ways: if you are using widgets, just add th
 3. The Mortgage Rates widget configuration dialog, as it appears within WordPress Administration Interface.
 
 == Upgrade Notice ==
+
+= 1.3.2 =
+Interface and widget-mode fixes.
 
 = 1.3.1 =
 Small fixes.
